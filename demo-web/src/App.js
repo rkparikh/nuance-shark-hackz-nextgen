@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './component/Home';
+import RecordDetails from './component/RecordDetails';
+import SystemRules from './component/SystemRules'
 
 
 class App extends Component {
@@ -9,8 +10,8 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path='/' exact={true} component={Home}/>
-          <Route path='/groups' exact={true} component={Home}/>
+          <Route path='/' exact={true} component={RecordDetails}/>
+          <Route path='/system-rules' exact={true} component={SystemRules}/>
         </Switch>
       </Router>
     )

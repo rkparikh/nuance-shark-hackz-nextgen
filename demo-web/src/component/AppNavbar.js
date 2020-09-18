@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, NavbarBrand, Button } from 'reactstrap';
+import { Link, NavLink } from 'react-router-dom';
+import { Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem } from 'reactstrap';
 
 export default class AppNavbar extends Component {
     constructor(props) {
@@ -17,9 +17,15 @@ export default class AppNavbar extends Component {
 
     render() {
         return <Navbar color="dark" dark expand="md">
-            <NavbarBrand tag={Link} to="/">Home</NavbarBrand>
-            <Button color="link"><Link to="/groups">Manage JUG Tour</Link></Button>
-            <Button color="link"><Link to="/rules">Manage Rules</Link></Button>
+            <NavbarBrand tag={Link} to={this.props.homeUrl}>Demo</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Nav className="mr-auto" navbar>
+                <NavItem>
+                    <NavLink to={this.props.homeUrl}>{this.props.headerName}</NavLink>
+                </NavItem>
+            </Nav>
+            <NavbarText>{this.props.data ? this.props.data.firstName : ""}</NavbarText>
+
         </Navbar>;
     }
 }

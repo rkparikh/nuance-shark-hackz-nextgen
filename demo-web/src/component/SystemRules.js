@@ -4,11 +4,20 @@ import { Button, Container } from 'reactstrap';
 import '../App.css';
 import AppNavbar from './AppNavbar';
 
-class Home extends Component {
+class SystemRules extends Component {
+
+
+  async componentDidMount() {
+    const response = await fetch('/demo/patients/RQTKDTHUEWBNGLLWECUGHWSIN');
+    const body = await response.json();
+    alert(body);
+  }
+
+
   render() {
     return (
       <div>
-        <AppNavbar/>
+        <AppNavbar headerName="System Rules" homeUrl="/system-rules" />
         <Container fluid>
           <Button color="link"><Link to="/groups">Manage JUG Tour</Link></Button>
         </Container>
@@ -17,4 +26,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default SystemRules;
