@@ -17,12 +17,7 @@ public class Patient {
 	public Patient() {
 	}
 
-	/**
-	 * Constructor with ability to optionally load patient's talix opportunities
-	 * 
-	 * @param patientEntity
-	 * @param includeOpportunities
-	 */
+	
 	public Patient(PatientEntity patientEntity) {
 		this.setPatientSid(patientEntity.getPatientSid());
 		this.setMrn(patientEntity.getMrn());

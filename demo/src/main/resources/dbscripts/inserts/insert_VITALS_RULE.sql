@@ -5,11 +5,7 @@ INSERT INTO [dbo].[VITALS_RULE]
            ([NAME]
            ,[DESCRIPTION]
 		   ,[RISK_LEVEL]
-           ,[DEFINITION]
-           ,[CREATED_BY]
-           ,[CREATED_DATE]
-           ,[MODIFIED_BY]
-           ,[MODIFIED_DATE])
+           ,[DEFINITION])
      VALUES
            ('BloodSugerRule'
            ,'Rule for sending notification for blood suger levels'
@@ -28,11 +24,7 @@ INSERT INTO [dbo].[VITALS_RULE]
             "value": 3
         }
     ]
-}'
-           ,'admin'
-           ,CURRENT_TIMESTAMP
-           ,'admin'
-           ,CURRENT_TIMESTAMP)
+}')
 GO
 
 

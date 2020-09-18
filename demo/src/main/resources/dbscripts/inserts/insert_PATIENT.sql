@@ -9,11 +9,7 @@ INSERT INTO [dbo].[PATIENT]
            ,[LAST_NAME]
            ,[MIDDLE_NAME]
            ,[BIRTH_DATE]
-           ,[GENDER]
-           ,[CREATED_BY]
-           ,[CREATED_DATE]
-           ,[MODIFIED_BY]
-           ,[MODIFIED_DATE])
+           ,[GENDER])
      VALUES
            ('TEST_MRN1'
            ,'TEST_FACILITY1'
@@ -22,11 +18,7 @@ INSERT INTO [dbo].[PATIENT]
            ,'Smith'
            ,'M'
            ,'1951-10-10 00:00:00.000'
-           ,'Male'
-           ,'admin'
-           ,CURRENT_TIMESTAMP
-           ,'admin'
-           ,CURRENT_TIMESTAMP)
+           ,'Male')
 GO
 
 

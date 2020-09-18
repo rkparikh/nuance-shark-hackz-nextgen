@@ -9,6 +9,6 @@ import com.nuance.shark.hacks.demo.entity.PatientFactorEntity;
 
 public interface PatientFactorDao extends CrudRepository<PatientFactorEntity, Long> {
 
-	List<PatientFactorEntity> findByFactorSid(Long factorSid);
+	List<PatientFactorEntity> findByPatientSidAndFactorSid(Long patientSid, Long factorSid);
 
 }
