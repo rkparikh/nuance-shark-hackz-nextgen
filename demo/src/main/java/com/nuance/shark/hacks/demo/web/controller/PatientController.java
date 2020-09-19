@@ -1,8 +1,7 @@
 
 package com.nuance.shark.hacks.demo.web.controller;
 
-import java.util.Collections;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,12 +53,14 @@ public class PatientController {
 	}
 
 	@PostMapping("/patient/factor/save")
-	public ResponseEntity<Object> savePatientFactors(@RequestBody PatientFactorVM patientFactorVM) {
+	public ResponseEntity<Object> savePatientFactors(@RequestBody PatientFactorVM patientFactorVM) throws Exception {
 		PatientFactor patientFactor = new PatientFactor();
 		patientFactor.setPatientSid(patientFactorVM.getPatientSid());
 		patientFactor.setFactorSid(patientFactorVM.getFactorSid());
 		patientFactor.setRecordValue(patientFactorVM.getRecordValue());
-		patientFactor.setRecordEntryDate(new Date());
+
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+		patientFactor.setRecordEntryDate(sdf.parse(patientFactorVM.getRecordEntryDate()));
 		patientService.savePatientFactor(patientFactor);
 		vitalsAIService.checkAndNotify(patientFactor.getPatientSid(), patientFactor.getFactorSid());
 		return new ResponseEntity<>(HttpStatus.OK, HttpStatus.OK);

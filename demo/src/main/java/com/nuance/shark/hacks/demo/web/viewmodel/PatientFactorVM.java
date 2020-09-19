@@ -22,7 +22,7 @@ public class PatientFactorVM implements Serializable {
 		this.factorSid = pFactor.getFactorSid();
 		this.recordValue = pFactor.getRecordValue();
 		if (pFactor.getRecordEntryDate() != null) {
-			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+			SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
 			this.recordEntryDate = sdf.format(pFactor.getRecordEntryDate());
 		}
 	}

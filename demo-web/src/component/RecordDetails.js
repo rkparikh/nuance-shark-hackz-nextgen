@@ -114,14 +114,14 @@ class RecordDetails extends Component {
             </Row>
           </div>
           <div className="mt-2">
-            {this.renderPatientFactorData()}
+            {this.renderPatientFactorTable()}
           </div>
         </Container>
       </div>
     );
   }
 
-  renderPatientFactorData() {
+  renderPatientFactorTable() {
     const { patientFactorData } = this.state;
     if (patientFactorData.length <= 0) {
       return;
@@ -136,13 +136,13 @@ class RecordDetails extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.renderEncounterData(patientFactorData)}
+          {this.renderPatientFactorData(patientFactorData)}
         </tbody>
       </Table>
     );
   }
 
-  renderEncounterData(patientFactorData) {
+  renderPatientFactorData(patientFactorData) {
     return [...patientFactorData].map((pf, index) => {
       return (
         <tr key={pf.patientFactorSid}>
@@ -164,13 +164,13 @@ class RecordDetails extends Component {
           <ModalBody>
             <Form onSubmit={this.handleSubmit}>
               <FormGroup>
-                <Label for="name">Name</Label>
-                <Input type="text" name="recordValue" id="recordValue" value={pfRecord.recordValue || ''}
-                  onChange={this.handleChange} />
+                <Label for="recordEntryDate">Date</Label>
+                <Input type="text" name="recordEntryDate" id="recordEntryDate" value={pfRecord.recordEntryDate || ''}
+                  onChange={this.handleChange} placeholder="MM/dd/yyyy HH:mm" />
               </FormGroup>
               <FormGroup>
-                <Label for="address">Address</Label>
-                <Input type="text" name="recordEntryDate" id="recordEntryDate" value={pfRecord.recordEntryDate || ''}
+                <Label for="recordValue">Value</Label>
+                <Input type="text" name="recordValue" id="recordValue" value={pfRecord.recordValue || ''}
                   onChange={this.handleChange} />
               </FormGroup>
               <FormGroup>
