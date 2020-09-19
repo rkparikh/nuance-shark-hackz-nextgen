@@ -17,7 +17,7 @@ export default class AppNavbar extends Component {
 
     render() {
         return <Navbar color="dark" dark expand="md">
-            <NavbarBrand tag={Link} to={this.props.homeUrl}>Demo</NavbarBrand>
+            <NavbarBrand tag={Link} to={this.props.homeUrl}>Care</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Nav className="mr-auto" navbar>
                 <NavItem>
