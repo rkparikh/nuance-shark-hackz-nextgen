@@ -60,7 +60,7 @@ public class PatientController {
 		patientFactor.setRecordValue(patientFactorVM.getRecordValue());
 
 		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
-		patientFactor.setRecordEntryDate(sdf.parse(patientFactorVM.getRecordEntryDate()));
+		patientFactor.setRecordEntryDate(sdf.parse(patientFactorVM.getRecordEntryDate() + " 10:10"));
 		patientService.savePatientFactor(patientFactor);
 		vitalsAIService.checkAndNotify(patientFactor.getPatientSid(), patientFactor.getFactorSid());
 		return new ResponseEntity<>(HttpStatus.OK, HttpStatus.OK);

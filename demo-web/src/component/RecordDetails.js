@@ -46,7 +46,8 @@ class RecordDetails extends Component {
 
   toggleModal = () => {
     this.setState({
-      modalOpen: !this.state.modalOpen
+      modalOpen: !this.state.modalOpen,
+      pfRecord: {}
     });
   }
 
@@ -108,6 +109,12 @@ class RecordDetails extends Component {
                   <DropdownItem>
                     <div onClick={this.onFactorSelect} data-factor-sid="1">Blood Sugar Level</div>
                   </DropdownItem>
+                  <DropdownItem>
+                    <div onClick={this.onFactorSelect} data-factor-sid="2">Creatinine</div>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <div onClick={this.onFactorSelect} data-factor-sid="2">Blood Pressure</div>
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown></Col>
               <Col>{this.renderAddForm()}</Col>
@@ -166,7 +173,7 @@ class RecordDetails extends Component {
               <FormGroup>
                 <Label for="recordEntryDate">Date</Label>
                 <Input type="text" name="recordEntryDate" id="recordEntryDate" value={pfRecord.recordEntryDate || ''}
-                  onChange={this.handleChange} placeholder="MM/dd/yyyy HH:mm" />
+                  onChange={this.handleChange} placeholder="MM/dd/yyyy" />
               </FormGroup>
               <FormGroup>
                 <Label for="recordValue">Value</Label>
